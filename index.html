@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+    <script src="canvas.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <img src="imagens/logo.svg" alt="Logotipo Alura">
+    </header>
+    
+    <main class="main-index" id="main-index">
+        <nav class="menuInicial">
+            <div><button id="iniciarJogo" class="iniciarJogo">Iniciar Jogo</button></div>
+            <div><button id="adicionarPalavra" class="adicionarPalavra">Adicionar Palavra</button></div>
+        </nav>
+    </main>
+    
+    <main class="main-addpalavras" id="main-addpalavras">
+        <article class="box-input-ap">
+            <textarea name="input-palavras" id="inputPalavras" class="input-palavras" placeholder="Insira aqui"></textarea>
+        </article>
+
+        <div class="aviso"><p>Somente letras maiúsculas.</p></div>
+
+        <div class="but-addpalavras">
+            <div><button id="but-salvar" class="but-salvar">Salvar e Começar</button></div>
+            <div><button id="but-adicionarout" class="but-adicionarout">Adicionar Outra Palavra</button></div>
+            <div><button id="but-cancelar" class="but-cancelar">Cancelar</button></div>
+        </div>
+    </main>
+
+    <main class="main-game" id="main-game">
+        <div class="canvaForca" id="canvaForca">
+            <canvas width="800" height="400"></canvas>
+        </div>
+        <div class="campo-palavra" id="campo-palavra">
+            <p id="letrasCorretas" class="letrasCorretas"></p>
+            <p id="letrasIncorretas" class="letrasIncorretas"></p>
+        </div>
+        <div class="teclado" id="teclado">
+        </div>
+        <div class="but-games" id="but-games">
+            <div class="game-grid-but">
+                <button id="gameNovojogo" class="gameNovojogo">Novo Jogo</button>
+                <button id="tecladoVirtual" class="tecladoVirtual">Teclado Virtual</button>
+                <button id="gameDesistir" class="gameDesistir">Desistir</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

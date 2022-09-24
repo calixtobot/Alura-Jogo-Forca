@@ -1,0 +1,415 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --cor0: #F3F5FC;
+    --cor0-1: #c8cbd3;
+    --cor1: #0A3871;
+    --cor1-1: #061f3d;
+    --cor3: white;
+    --cor4: rgb(192, 63, 63);
+}
+
+body {
+    background-color: var(--cor0);
+}
+
+header {
+    margin: 40px 84px;
+}
+
+main {
+    max-width: 1080px;
+    height: calc(100vh - 80px - 51px - 40px);
+    margin: auto;
+}
+
+@keyframes mudaCor01 {
+    0% {
+        background-color: var(--cor1);
+    }
+    50% {
+        background-color: var(--cor1-1) ;
+    }
+    100% {
+        background-color: var(--cor1);
+    }
+}
+
+.adicionarPalavra {
+    border: 1.5px solid var(--cor1);
+    color: var(--cor1)
+}
+
+.adicionarPalavra:hover {
+    animation: mudaCor02 1s infinite;
+}
+
+@keyframes mudaCor02 {
+    0% {
+        background-color: var(--cor0);
+    }
+    50% {
+        background-color: var(--cor0-1) ;
+    }
+    100% {
+        background-color: var(--cor0);
+    }
+}
+
+/*CSS - página main*/
+
+.main-index {
+    display: flex;
+}
+
+.menuInicial {
+    width: 317px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 20px;
+}
+
+.iniciarJogo, .adicionarPalavra {
+    width: 100%;
+    height: 80px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.103);
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.iniciarJogo {
+    background-color: var(--cor1);
+    color: var(--cor3);
+    border: none;
+}
+
+.iniciarJogo:hover, .adicionarPalavra:hover {
+    scale: 1.05;
+}
+
+.iniciarJogo:hover {
+    animation: mudaCor01 1s infinite;
+}
+
+/*fim do CSS - página main*/
+
+/*CSS - página addpalavra */
+
+.main-addpalavras {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-input-ap {
+    width: 680px;
+    margin: 100px auto;
+    flex: 0.6;
+}
+
+.input-palavras {
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    background-color: var(--cor0);
+    border: none;
+    resize: none;
+}
+
+.aviso {
+    font-size: 0.8em;
+    height: 16px;
+    width: 680px;
+    margin: 5px auto;
+}
+
+.aviso img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.aviso p {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.but-addpalavras {
+    flex: .4;
+    width: 680px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 10px;
+}
+
+.but-salvar, .but-cancelar, .but-adicionarout {
+    width: 100%;
+    height: 67px;
+    border-radius: 24px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.103);
+}
+
+.but-salvar, .but-adicionarout {
+    color: var(--cor0);
+    background-color: var(--cor1);
+    border: none;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.but-cancelar {
+    font-size: 1em;
+    border: 1.5px solid var(--cor1);
+    color: var(--cor1);
+    transition: 0.5s;
+}
+
+.but-salvar:hover, .but-cancelar:hover, .but-adicionarout:hover {
+    scale: 1.05;
+}
+
+.but-salvar:hover .but-adicionarout:hover {
+    animation: mudaCor01 1s infinite;
+}
+
+.but-cancelar:hover {
+    animation: mudaCor02 1s infinite;
+}
+
+/* fim CSS específico addpalavra */
+
+/* CSS específico game */
+
+.main-game {
+    display: flex;
+    flex-direction: column;
+}
+
+.canvaForca {
+    flex: 1;
+    display: flex;
+}
+
+canvas {
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+}
+
+.campo-palavra {
+    flex: 0.3;
+}
+
+.but-games {
+    flex: 0.2;
+    display: flex;
+}
+
+.game-grid-but {
+    width: 50%;
+    height: 50px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+.gameNovojogo, .gameDesistir, .tecladoVirtual {
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.103);
+}
+
+.gameNovojogo, .tecladoVirtual {
+    color: var(--cor0);
+    background-color: var(--cor1);
+    border: none;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.gameDesistir {
+    font-size: 1em;
+    border: 1.5px solid var(--cor1);
+    color: var(--cor1);
+    transition: 0.5s;
+}
+
+.gameNovojogo:hover, .gameDesistir:hover, .tecladoVirtual:hover {
+    scale: 1.05;
+}
+
+.gameNovojogo:hover, .tecladoVirtual:hover {
+    animation: mudaCor01 1s infinite;
+}
+
+.gameDesistir:hover {
+    animation: mudaCor02 1s infinite;
+}
+
+.campo-palavra {
+    background-color: white;
+    width: calc(50%);
+    margin: auto;
+    border: 1px solid var(--cor1);
+    border-radius: 10px;
+}
+
+.letrasCorretas {
+    display: inline-block;
+    text-align: center;
+    padding-top: 2%;
+    width: 100%;
+    height: 50%;
+    vertical-align: middle;
+    font-weight: 500;
+    color: var(--cor1);
+    line-height: 1.5;
+    letter-spacing: 20px;
+    font-size: 35px;
+}
+
+.letrasIncorretas {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-top: 2%;
+    height: 50%;
+    vertical-align: baseline;
+    font-weight: 500;
+    color: var(--cor4);
+    line-height: 1.2;
+    letter-spacing: 20px;
+    font-size: 28px;
+}
+
+.teclado {
+    flex: 0.4;
+    width: 50%;
+    margin: auto;
+    padding: 20px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+}
+
+.teclado button {
+    background-color: var(--cor1);
+    color: var(--cor3);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.teclado button:hover {   
+    animation: mudaCor01 1s 1;
+}
+
+/* responsividade */
+
+@media (max-width:850px) {
+    
+    header {
+        margin: 40px;
+    }
+
+    .main-game {
+        width: calc(100% - 30px);
+        margin: auto;
+    }
+
+    .campo-palavra {
+        width: 90%;
+    }
+
+    .game-grid-but {
+        width: 90%;
+    }
+
+    canvas {
+        width: 700px;
+        height: 350px;
+    }
+
+    .teclado {
+        flex: 0.4;
+        width: 90%;
+        margin: auto;
+        padding: 20px 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 5px;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        row-gap: 5px;
+    }
+
+    .gameNovojogo:hover, .gameDesistir:hover, .tecladoVirtual:hover {
+        scale: 1;
+    }
+    
+    .gameNovojogo:hover, .tecladoVirtual:hover {
+        animation: mudaCor01 1s 1;
+    }
+    
+    .gameDesistir:hover {
+        animation: mudaCor02 1s 1;
+    }
+}
+
+@media (max-width:450px) {
+    header {
+        margin: 20px 20px 0px 20px;
+    }
+
+    .canvaForca {
+        flex: .5;
+    }
+
+    .main-game {
+        width: calc(100% - 10px);
+        height: calc(100vh - 71px);
+        margin: auto;
+    }
+
+    canvas {
+        width: 400px;
+        height: 200px;
+    }
+
+    .teclado {
+        flex: .4;
+        width: 90%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 5px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        row-gap: 5px;
+    }
+
+    .but-games {
+        flex: .3;
+    }
+
+    .game-grid-but {
+        height: 90%;
+        grid-template-columns: 1fr;
+        row-gap: 5px;
+        
+    }
+
+    .letrasCorretas {
+        font-size: 18px;
+    }
+    
+    .letrasIncorretas {
+        font-size: 14px;
+    }
+}
